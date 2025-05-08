@@ -120,7 +120,7 @@ try {
         logger.LogInformation("- {TypeName}", type.FullName);
         
         var methods = type.GetMethods()
-            .Where(m => m.GetCustomAttributes(typeof(McpServerTool), true).Any())
+            .Where(m => m.GetCustomAttributes(typeof(McpServerToolAttribute), true).Any())
             .ToList();
         
         logger.LogInformation("  Found {Count} methods with McpServerTool attribute:", methods.Count);
